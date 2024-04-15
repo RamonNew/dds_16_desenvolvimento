@@ -1,0 +1,10 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.gradeado{
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    
+}

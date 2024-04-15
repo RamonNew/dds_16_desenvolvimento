@@ -1,0 +1,23 @@
+.primeiraDiv{
+    border: 5px  solid red;
+    background: lightblue;
+    width: 300px;
+    font-family:'Courier New', Courier, monospace;
+    /*margin: 100px 50px 80px 20px;*/
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+.primeiraDiv:hover{
+    background: blueviolet;
+}
+
+.terceira{
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    background-image: url(../img/botafogo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
