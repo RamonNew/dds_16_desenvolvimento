@@ -1,0 +1,20 @@
+-- Inicializa o repositorio
+git init
+-- Configurando repositorio
+git config user.email "meuemail@gmail"
+git config user.name "Meu nome"
+git remote add origin https://github.com/meuusuario/meu_repositorio.git
+-- Adicionando arquivos para commit
+git add .
+-- Realizando commit
+git commit -m "Mensagem do que foi alterado"
+-- Selecionando a branch main
+git branch -M main
+-- enviando arquivos para o github
+git push -u -origin main
+
+-- o arquivo .gitignore será preenchido com arquivos que não devem ser enviados
+
+-- Clonando um repositorio
+git clone https://github.com/meuusuario/meu_repositorio.git
+
