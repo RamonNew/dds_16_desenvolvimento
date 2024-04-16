@@ -1,0 +1,12 @@
+table tr:nth-child(odd){
+    background-color: aqua !important;
+}
+
+.botaoverde{
+    background-color: rgb(80, 211, 80);
+}
+
+.botaoverde:hover{
+    color: white;
+    background-color: rgb(37, 98, 37);
+}
