@@ -11,7 +11,7 @@ git commit -m "Mensagem do que foi alterado"
 -- Selecionando a branch main
 git branch -M main
 -- enviando arquivos para o github
-git push -u -origin main
+git push -u origin main
 
 -- o arquivo .gitignore será preenchido com arquivos que não devem ser enviados
 
