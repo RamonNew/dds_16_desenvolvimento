@@ -25,6 +25,24 @@ class Usuario{
         })        
     }
 
+    deletarUsuario(usuario_id){
+        return new Promise((resolve,reject)=>{
+            let sql = `DELETE FROM usuarios WHERE usuario_id='${usuario_id}'`
+            this.conexao.query(sql,function(erro,retorno){
+                if(erro){
+                    console.debug(erro)
+                    reject([400,erro])
+                }else{
+                    if(retorno.affectedRows === 0){
+                        resolve([404,"Usuário não encontrado"])
+                    }else{
+                        resolve([202,"Usuário deletado com sucesso!"])
+                    }
+                }
+            })
+        })    
+    }
+
     mostrarTodos(){
         return new Promise((resolve,reject)=>{
             let sql = `SELECT * FROM usuarios`

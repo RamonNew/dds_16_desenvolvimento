@@ -27,5 +27,6 @@ routes.post("/logar",usuarios.logar)
 // routes.get("/usuarios",usuarios.verificaToken,usuarios.index)
 routes.get("/usuarios",usuarios.index)
 routes.get("/usuarios/:usuario_id",usuarios.show)
+routes.delete("/usuarios/:usuario_id",usuarios.destroy)
 
 module.exports = routes
