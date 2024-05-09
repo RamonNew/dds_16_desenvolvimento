@@ -45,6 +45,22 @@ class UsuarioController{
         )
     }
 
+    update(req, res){
+        let {usuario_id} = req.params
+        let {nome, usuario, senha,usuario_tipo} = req.body
+
+        Usuario.atualizarUsuario(usuario_id,nome,usuario,senha,usuario_tipo).then(
+            resposta => {
+                console.debug("Usuário atualizado com sucesso")
+                res.status(resposta[0]).json("Usuário atualizado com sucesso")
+            }
+        ).catch(
+            resposta =>{
+                console.debug(resposta)
+                res.status(resposta[0]).json("Erro: "+ resposta[1].errno)
+            }
+        )
+    }
     destroy(req,res){
         let {usuario_id} = req.params // pegando Id da requisição
 

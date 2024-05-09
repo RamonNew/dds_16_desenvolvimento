@@ -8,6 +8,7 @@ import About from './views/About/About';
 import Navbar from './components/Navbar';
 import AddUsuario from './views/AdicionarUsuarios/index'
 import GestaoUsuarios from './views/GestaoUsuarios';
+import AtualizarUsuarios from './views/AtualizarUsuarios';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/sobrenos' element={<About />} />
         <Route path='/adicionarUsuario' element={<AddUsuario />} />
         <Route path='/gestaoUsuario' element={<GestaoUsuarios />} />
+        <Route path='/atualizarUsuario/:usuario_id' element={<AtualizarUsuarios />} />
       </Routes>
     </BrowserRouter>
   );

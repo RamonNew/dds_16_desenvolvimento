@@ -28,5 +28,6 @@ routes.post("/logar",usuarios.logar)
 routes.get("/usuarios",usuarios.index)
 routes.get("/usuarios/:usuario_id",usuarios.show)
 routes.delete("/usuarios/:usuario_id",usuarios.destroy)
+routes.put("/usuarios/:usuario_id",usuarios.update)
 
 module.exports = routes
