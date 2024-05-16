@@ -9,6 +9,8 @@ import Navbar from './components/Navbar';
 import AddUsuario from './views/AdicionarUsuarios/index'
 import GestaoUsuarios from './views/GestaoUsuarios';
 import AtualizarUsuarios from './views/AtualizarUsuarios';
+import Logar from './views/Logar';
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
         <Route path='/adicionarUsuario' element={<AddUsuario />} />
         <Route path='/gestaoUsuario' element={<GestaoUsuarios />} />
         <Route path='/atualizarUsuario/:usuario_id' element={<AtualizarUsuarios />} />
+        <Route path='/logar' element={<Logar />} />
       </Routes>
     </BrowserRouter>
   );
