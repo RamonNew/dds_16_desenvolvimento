@@ -61,6 +61,26 @@ class Usuario {
             })
         })
     }
+
+    verificarLoginSenha(login,senha){
+        let sql = `SELECT * FROM usuarios WHERE login = "${login}" AND senha= "${senha}"`
+
+        return new Promise((resolve, reject) => {
+            this.conexao.query(sql, function (erro, retorno) {
+                if (erro) {
+                    reject([400, erro])
+                }else{
+                    if(retorno.length === 0){
+                        resolve([404, "Usuário não encontrado"])
+                    }else{
+                        let {id_usuario} = retorno[0] //pegando id_usuario
+                        resolve([200, {id_usuario}])
+                    }
+                    
+                } 
+            })
+        })    
+    }
 }
 
 module.exports = new Usuario()
