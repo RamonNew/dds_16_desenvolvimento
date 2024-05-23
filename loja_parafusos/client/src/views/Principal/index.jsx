@@ -9,18 +9,26 @@ function Principal() {
         if(!id_usuario){
             window.location.href = "./"
         }
-        setParafusos([
-            { id: 1, nome: "Sextavado", id_categoria: 1 },
-            { id: 2, nome: "Francês", id_categoria: 2 },
-            { id: 3, nome: "Máqiona", id_categoria: 2 },
-        ])
+        
+        listarParafusos()
     },[])
+
+    async function listarParafusos(){
+        try {
+            const resposta = await fetch("/parafuso")
+            const dados = await resposta.json()
+            setParafusos(dados)
+        } catch (error) {
+            
+        }
+    }
     return (
         <div>
+            <a href="/cadastroParafuso">Cadastrar Parafuso</a>
             {parafusos.map(
                 parafuso => (
-                    <div key={parafuso.id}>
-                        <div>Id: {parafuso.id} Nome: {parafuso.nome} Categoria: {parafuso.id_categoria}</div>
+                    <div key={parafuso.id_parafuso}>
+                        <div>Id: {parafuso.id_parafuso} Nome: {parafuso.nome} Categoria: {parafuso.categoria}</div>
                     </div>
                 )
             )}

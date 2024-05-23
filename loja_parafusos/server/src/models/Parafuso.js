@@ -20,7 +20,7 @@ class Parafuso {
     }
 
     mostrarParafusos() {
-        let sql = "SELECT * FROM parafusos"
+        let sql = "SELECT * FROM vw_parafusos"
 
         return new Promise((resolve, reject) => {
             this.conexao.query(sql, function (erro, retorno) {
@@ -39,8 +39,13 @@ class Parafuso {
             this.conexao.query(sql, function (erro, retorno) {
                 if (erro) {
                     reject([400, erro])
+                }else {
+                    if (retorno["affectedRows"] > 0) {
+                        resolve([200, "Parafuso Atualizado"])
+                    } else {
+                        resolve([404, "Parafuso não encontrado"])
+                    }
                 }
-                resolve([200, "Parafuso Atualizado"])
             })
         })
     }

@@ -39,8 +39,13 @@ class Categoria {
             this.conexao.query(sql, function (erro, retorno) {
                 if (erro) {
                     reject([400, erro])
+                }else {
+                    if (retorno["affectedRows"] > 0) {
+                        resolve([200, "Categoria Atualizada"])
+                    } else {
+                        resolve([404, "Categoria não encontrada"])
+                    }
                 }
-                resolve([200, "Categoria Atualizada"])
             })
         })
     }
