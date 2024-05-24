@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Logar from "./views/Logar"
 import Principal from './views/Principal';
 import CadastroParafuso from './views/CadastroParafuso';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (

@@ -21,6 +21,8 @@ app.get("/usuarios",UsuarioController.read)
 app.put("/usuarios/:id_usuario",UsuarioController.update)
 app.delete("/usuarios/:id_usuario",UsuarioController.delete)
 
+app.get("/usuarios/:id_usuario",UsuarioController.getUsuario)
+
 app.post("/categoria",CategoriaController.create)
 app.get("/categoria",CategoriaController.read)
 app.put("/categoria/:id_categoria",CategoriaController.update)

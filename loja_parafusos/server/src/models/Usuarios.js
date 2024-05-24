@@ -62,6 +62,20 @@ class Usuario {
         })
     }
 
+    selecionarUsuario(id_usuario) {
+        let sql = `SELECT * FROM usuarios WHERE id_usuario="${id_usuario}";`
+
+        return new Promise((resolve, reject) => {
+            this.conexao.query(sql, function (erro, retorno) {
+                if (erro) {
+                    reject([400, erro])
+                }else{
+                    resolve([200, retorno[0]])
+                }    
+            })
+        })
+    }
+
     verificarLoginSenha(login,senha){
         let sql = `SELECT * FROM usuarios WHERE login = "${login}" AND senha= "${senha}"`
 

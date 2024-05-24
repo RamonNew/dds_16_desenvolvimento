@@ -32,21 +32,25 @@ function Logar() {
 
   }
   return (
-    <div>
-      <h1>Bem vindo</h1>
+    <div className='container col-md-3 pt-5 justify-content-center'>
+      <h1 className='text-center'>Bem vindo</h1>
       <input
+        className='form-control'
         type="text"
         placeholder='Login'
         value={login}
         onChange={(e) => setLogin(e.target.value)}
       />
       <input
+        className='form-control'
         type="password"
         placeholder='Senha'
         value={senha}
         onChange={(e) => setSenha(e.target.value)}
       />
-      <button onClick={efetuarLogin}>Logar</button>
+      <button
+        className='mt-2 btn btn-primary float-end'
+        onClick={efetuarLogin}>Logar</button>
     </div>
   )
 }

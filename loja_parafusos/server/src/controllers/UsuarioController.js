@@ -66,6 +66,22 @@ class UsuarioController {
         )
     }
 
+    getUsuario(req, res) {
+        let { id_usuario } = req.params
+
+        Usuario.selecionarUsuario(id_usuario).then(
+            resposta => {
+                console.debug("Exibindo Usuário")
+                res.status(resposta[0]).json(resposta[1])
+            }
+        ).catch(
+            resposta => {
+                console.debug("Erro: Exibindo Usuário")
+                res.status(resposta[0]).json(resposta[1])
+            }
+        )
+    }
+
     logar(req, res) {
         let { login, senha } = req.body
 
